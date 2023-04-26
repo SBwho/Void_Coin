@@ -234,11 +234,4 @@ console.log();
 console.log('privatekey: ',privatekey);
 console.log();
 console.log('public key : ',publickey);
-
-
-
-
-
-
-
- */
+*/
