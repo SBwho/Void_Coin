@@ -4,7 +4,7 @@ public class CaesarCipher {
     public static void main(String[] args) {
         String message = "This is a secret message";
         BigInteger shift = new BigInteger("123");
-         BigInteger[] private_key ={new BigInteger("17"),new BigInteger("3233")};
+        BigInteger[] private_key ={new BigInteger("17"),new BigInteger("3233")};
         BigInteger [] public_key = {new BigInteger("2753"),new BigInteger("3233")};
         int s = shift.intValue();
         
