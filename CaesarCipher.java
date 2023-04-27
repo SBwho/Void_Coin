@@ -20,10 +20,9 @@ public class CaesarCipher {
         // As MessageDigest is an abstract class it cannot be instantiated 
         MessageDigest hasher = MessageDigest.getInstance("SHA-512");
         System.out.println(hasher.getDigestLength());
-        int hashed_data = hasher.digest(message,3,5);
-        //System.out.println(Arrays.toString(hashed_data));
-        //System.out.println(CaesarCipher.hash_repr_hex(hashed_data));
-        System.out.println(hashed_data);
+        byte[] hashed_data = hasher.digest(message);
+        System.out.println(Arrays.toString(hashed_data));
+        System.out.println(CaesarCipher.hash_repr_hex(hashed_data));
         }
         catch(Exception NoSuchAlgorithmException){
             System.out.println("something went wrong");
