@@ -6,7 +6,7 @@ public class JavaProject2023 {
         String sum = "";
         for (byte x : hashed) {
             System.out.println(x);
-            sum = sum + String.format("%x", x) + "|";
+            sum = sum + String.format("%02x", x) + "|";
         }
         return sum;
     }
@@ -20,7 +20,7 @@ public class JavaProject2023 {
         System.out.println(hasher.getDigestLength());
         byte[] hashed_data = hasher.digest(message);
         System.out.println(Arrays.toString(hashed_data));
-        System.out.println(CaesarCipher.hash_repr_hex(hashed_data));
+        System.out.println(JavaProject2023.hash_repr_hex(hashed_data));
         }
         catch(Exception NoSuchAlgorithmException){
             System.out.println("something went wrong");
