@@ -7,8 +7,8 @@ public class CaesarCipher {
         String sum = "";
         for (int x : hashed) {
             //System.out.println(Integer.toHexString(x));
-            //x=(x<0)?-x:x;
-            sum = sum + Integer.toBinaryString(x);
+            x=(x<0)?-x:x;
+            sum = sum + Integer.toHexString(x);
         }
         return sum;
     }
