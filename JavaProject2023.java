@@ -6,7 +6,7 @@ public class JavaProject2023 {
         String sum = "";
         for (byte x : hashed) {
             System.out.println(x);
-            sum = sum + String.format("%02x", x) + "|";
+            sum = sum + String.format("%02x", x);
         }
         return sum;
     }
@@ -16,7 +16,7 @@ public class JavaProject2023 {
         byte[] message = initial_message.getBytes("UTF-8");
 
         // As MessageDigest is an abstract class it cannot be instantiated 
-        MessageDigest hasher = MessageDigest.getInstance("SHA-256");
+        MessageDigest hasher = MessageDigest.getInstance("SHA-512");
         System.out.println(hasher.getDigestLength());
         byte[] hashed_data = hasher.digest(message);
         System.out.println(Arrays.toString(hashed_data));
