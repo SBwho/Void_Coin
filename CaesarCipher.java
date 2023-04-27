@@ -5,7 +5,7 @@ public class CaesarCipher {
     public static String hash_repr_hex(byte[] hashed){
         String sum = "";
         for (byte x : hashed) {
-            sum = sum + String.format("%02x", x);
+            sum = sum + String.format("%x", x);
         }
         return sum;
     }
