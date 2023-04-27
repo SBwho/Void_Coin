@@ -1,11 +1,12 @@
 import java.security.MessageDigest;
 import java.util.Arrays;
 
-public class CaesarCipher {
+public class JavaProject2023 {
     public static String hash_repr_hex(byte[] hashed){
         String sum = "";
         for (byte x : hashed) {
-            sum = sum + String.format("%x", x);
+            System.out.println(x);
+            sum = sum + String.format("%x", x) + "|";
         }
         return sum;
     }
