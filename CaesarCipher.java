@@ -18,7 +18,7 @@ public class CaesarCipher {
         byte[] message = initial_message.getBytes("UTF-8");
 
         // As MessageDigest is an abstract class it cannot be instantiated 
-        MessageDigest hasher = MessageDigest.getInstance("SHA-256");
+        MessageDigest hasher = MessageDigest.getInstance("SHA-512");
         System.out.println(hasher.getDigestLength());
         int hashed_data = hasher.digest(message,3,5);
         //System.out.println(Arrays.toString(hashed_data));
