@@ -18,15 +18,24 @@ public class Node {
     }
 
     public void SendBitcoin(Node receiver, float amount){
-
+        
     }
 
-    public BigInteger[] get_public_key (){
-        BigInteger[] pair = {public_key, modulus};
-        return pair;      
+    public BigInteger get_public_key (){
+        return public_key;      
     }
 
-    public void mesasge_sign(){
+    public BigInteger get_modulus (){
+        return modulus;
+    }
 
+    public BigInteger mesasge_sign(String message_hash){
+        return Hash.hex_to_int(message_hash).pow(private_key.intValue()).mod(modulus);
+    }
+
+    public String message_decode(BigInteger integer, BigInteger public_key, BigInteger modulus){
+       integer =  integer.pow(public_key.intValue()).mod(modulus);
+       String s = integer.toString(16);
+       return s;
     }
 }

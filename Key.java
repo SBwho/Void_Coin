@@ -1,13 +1,14 @@
 import java.math.BigInteger;
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Key {
-    private static List<BigInteger> private_keys;
+    private static List<BigInteger> private_keys = new ArrayList<BigInteger>();
 
-    public static BigInteger[] generate_keys(){
+    public static BigInteger[] generate_keys() throws NullPointerException{
 
-        BigInteger[] key_pair = {};
+        BigInteger[] key_pair = new BigInteger[3];
         //Generate a new RSA key pair
         SecureRandom random = new SecureRandom();
         BigInteger p = BigInteger.probablePrime(11, random);
@@ -17,7 +18,7 @@ public class Key {
         BigInteger e;
         while (true){
             e = BigInteger.valueOf(random.nextInt(phi.intValue())); // generates a random number
-            if ((iterativeGCD(e,phi).equals(BigInteger.valueOf(1))) && !(private_keys.isEmpty()?true:private_keys.contains(e))){
+            if ((iterativeGCD(e,phi).equals(BigInteger.valueOf(1))) && !(private_keys.equals(null)?true:private_keys.contains(e))){
                 //checks if the generated number is a relative prime to phi and is not in the list of private keys
                 private_keys.add(e);
                 break;
